@@ -2,9 +2,9 @@
 import { gql } from 'apollo-server-express';
 
 const TYPEDEFS = gql`
-type Query {
+  type Query {
     hi: String
-}
+  }
 `;
 
 // Exports
