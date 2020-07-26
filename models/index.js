@@ -9,6 +9,9 @@ const basename = path.basename(__filename);
 const sequelize = new Sequelize('slack', 'postgres', 'postgres', {
   host: 'localhost',
   dialect: 'postgres',
+  define: {
+    underscored: true,
+  },
 });
 
 const models = {};

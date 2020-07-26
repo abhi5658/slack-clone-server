@@ -31,5 +31,16 @@
 - index.js
   - sequelize v6 -> sequelize.import has been deprecated
   - make changes to `require` models and not use `sequelize.import`
-- run file -> creates tables in slack db
+- run app -> it will auto create tables in slack db
+- `END`
+
+### [Video #4 Part#2 PostgreSQL Naming Conventions and GraphQL Schemas](https://www.youtube.com/watch?v=Q-hyZDW8S0E&list=PLN3n1USn4xlkdRlq3VZ1sT6SGW0-yajjL&index=5&t=0s)
+
+- using camel case ('teamId') in foreign keys to match same in graphql type definition as graphql probably allows camelCase only
+- options:
+  - Sequelize constructor : in video `underscored: true` -> no such option available => instead `options = { define: {underscored: true}}`
+  - model definition: options : `{ underscored: true }`
+  - in video every model foreign key are made snake_case by field key,but now not needed if used `define: {underscored: true }` in sequelize constructor
+- Re run app => tables recreated with new column names in snake case
+- Graphql - creating types => User, Message, Channel, Team
 - `END`

@@ -15,7 +15,7 @@ SERVER.applyMiddleware({
 // bodyParser is needed just for POST.
 // app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 
-models.sequelize.sync().then(() => {
+models.sequelize.sync({ force: true }).then(() => {
   app.listen(8080, () => {
     console.log('Server started at', 8080, '=>', SERVER.graphqlPath);
   });
