@@ -1,10 +1,17 @@
 // Imports: GraphQL
 // import { ApolloServer } from 'apollo-server-express';
 import { ApolloServer } from 'apollo-server-express';
+import path from 'path';
+import { mergeTypeDefs, mergeResolvers, loadFilesSync } from 'graphql-tools';
 
 // Imports: GraphQL TypeDefs & Resolvers
-import TYPEDEFS from './types';
-import RESOLVERS from './resolvers';
+// import TYPEDEFS from './types';
+// import RESOLVERS from './resolvers';
+
+const typesArray = loadFilesSync(path.join(__dirname, './schemas'));
+const TYPEDEFS = mergeTypeDefs(typesArray);
+const resolversArray = loadFilesSync(path.join(__dirname, './resolvers'));
+const RESOLVERS = mergeResolvers(resolversArray);
 
 // GraphQL: Schema
 const SERVER = new ApolloServer({

@@ -44,3 +44,11 @@
 - Re run app => tables recreated with new column names in snake case
 - Graphql - creating types => User, Message, Channel, Team
 - `END`
+
+### [Video #5 Part#3 Creating GraphQL Schemas and Resolvers using Sequelize](https://www.youtube.com/watch?v=DlNVHWo_nq8&list=PLN3n1USn4xlkdRlq3VZ1sT6SGW0-yajjL&index=5)
+
+- some typo and code correction from previous video
+- npm library [`merge-graphql-schemas`](https://github.com/Urigo/merge-graphql-schemas) has been deprecated
+- `npm i graphql-tools` -> It contains functions `mergeTypeDefs`,`mergeResolvers`,`loadFilesSync` which will be used now
+- move schemas(types) & reolvers to respective folders and add extra schema & resolver as minimum 2 required for merge
+- schema.js => import types and resolvers and merge using merge functions => run app

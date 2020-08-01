@@ -1,6 +1,6 @@
 const RESOLVERS = {
   Query: {
-    hi: (parent, args, context, info) => 'hi There',
+    hi: (parent, args, context, info) => 'hi There ye',
   },
 };
 
