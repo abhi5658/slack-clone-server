@@ -3,6 +3,7 @@
 import { ApolloServer } from 'apollo-server-express';
 import path from 'path';
 import { mergeTypeDefs, mergeResolvers, loadFilesSync } from 'graphql-tools';
+// import models from './models';
 
 // Imports: GraphQL TypeDefs & Resolvers
 // import TYPEDEFS from './types';
@@ -17,8 +18,11 @@ const RESOLVERS = mergeResolvers(resolversArray);
 const SERVER = new ApolloServer({
   typeDefs: TYPEDEFS,
   resolvers: RESOLVERS,
-  // https://github.com/prisma-labs/graphql-playground#usage
+  // context: {
+  //   models,
+  // },
   playground: {
+    // https://github.com/prisma-labs/graphql-playground#usage
     // endpoint: 'http://localhost:8080/graphql',
     endpoint: '/graphql',
     settings: {

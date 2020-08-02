@@ -52,3 +52,7 @@
 - `npm i graphql-tools` -> It contains functions `mergeTypeDefs`,`mergeResolvers`,`loadFilesSync` which will be used now
 - move schemas(types) & reolvers to respective folders and add extra schema & resolver as minimum 2 required for merge
 - schema.js => import types and resolvers and merge using merge functions => run app
+- add models in context object of server
+- create mutation types and resolvers for user,team,channel,message to try out basic create of instances
+- added user in context temporary to save referencing user id
+- `END`
